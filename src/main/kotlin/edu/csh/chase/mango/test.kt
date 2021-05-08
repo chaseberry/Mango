@@ -8,7 +8,7 @@ class Client() : MangoObject("clients") {
 
     var name: String by MangoField()
 
-    var device by MangoSubobject(Device::class)
+    var devices by MangoList(Device::class)
 
     constructor(name: String) : this() {
         this.name = name

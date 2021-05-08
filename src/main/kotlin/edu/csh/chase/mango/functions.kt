@@ -5,6 +5,11 @@ fun <T : MangoObject> T.select(selector: T.() -> Unit): MongoOperation.Select<T>
     return MongoOperation.Select(this)
 }
 
+fun <T: MangoObject> List<T>.select(selector: T.() -> Unit): MongoOperation.Select<T> {
+    selector(first())
+    return MongoOperation.Select(first())
+}
+
 fun <T : MangoObject> T.insert() {
     println("db.$collection.insert(${readActions()})")
 }

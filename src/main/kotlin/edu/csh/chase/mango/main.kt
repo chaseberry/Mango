@@ -10,7 +10,11 @@ fun main() {
         id = "123"
     }.edit {
         name = "Bob Marley"
-        device.lastSeen = Date()
+        devices.select {
+            version = "1.0.0"
+        }.edit {
+            lastSeen = Date()
+        }
     }
 
 }
