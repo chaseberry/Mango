@@ -1,5 +1,13 @@
 package edu.csh.chase.mango
 
+fun <T: MangoObject> T.find(where: T.() -> Unit) {
+
+}
+
+fun <T: MangoObject> T.edit(where: T.() -> Unit, edit: T.() -> Unit) {
+
+}
+
 fun <T : MangoObject> T.select(selector: T.() -> Unit): MongoOperation.Select<T> {
     selector(this)
     return MongoOperation.Select(this)

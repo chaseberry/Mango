@@ -6,6 +6,19 @@ fun main() {
 
     //Client("Clint Eastwood").insert()
 
+    Client().find {
+        id = "123"
+    }
+
+    Client().edit(
+        where = {
+            id = "123"
+        },
+        edit = {
+            name = "Bob Barley"
+        }
+    )
+
     val r = Client().select {
         id = "123"
     }.edit {
@@ -15,7 +28,8 @@ fun main() {
                 version = "1.0.0"
             }
             edit = {
-                lastSeen = Date()}
+                lastSeen = Date()
+            }
         }
     }
 
