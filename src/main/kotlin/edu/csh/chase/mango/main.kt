@@ -10,10 +10,22 @@ fun main() {
         id = "123"
     }.edit {
         name = "Bob Marley"
-        devices.select {
-            version = "1.0.0"
-        }.edit {
-            lastSeen = Date()
+        select(devices) {
+            select = {
+                version = "1.0.0"
+            }
+            edit = {
+                lastSeen = Date()}
+        }
+    }
+
+    Client().select2 {
+        select = {
+            id = "123"
+        }
+        edit = {
+            name = "Bob Marley"
+
         }
     }
 
